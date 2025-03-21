@@ -24,4 +24,6 @@ test('calculate division', () => {
     expect(calculator.divide(6,3)).toBe(2);
 })
 
-test('ceasar cipher')
+test('ceasar cipher', () => {
+    expect(caesarCipher("ab",1)).toBe("bc")
+})

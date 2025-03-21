@@ -26,8 +26,21 @@ const calculator = {
     }
 
 };
-function caesarCipher (){
-
+function caesarCipher (string, num){
+    let newString = "";
+    const alphabet = [
+        "a", "b", "c", "d", "e", "f", "g",
+        "h", "i", "j", "k", "l", "m", "n",
+        "o", "p", "q", "r", "s", "t", "u",
+        "v", "w", "x", "y", "z"
+      ];
+    for (let i = 0; i < string.length; i++){
+        let letter = alphabet.indexOf(string[i]);
+        let newIndex = letter + num;
+        newString += alphabet[newIndex];
+        
+    }
+    return newString
 };
 
 function analyzeArray (){
