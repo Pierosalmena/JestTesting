@@ -58,8 +58,19 @@ function caesarCipher (string, shift){
     return newString
 };
 
-function analyzeArray (){
+function analyzeArray (array){
+    const sortedArray = [...array].sort((a,b) => a-b);
+    const length = sortedArray.length;
+    const min = sortedArray[0];
+    const max = sortedArray[length - 1];
+    const average = max / 2
 
+    // function median (){
+    //     const middleIndex = Math.round(length / 2)
+    //     return array[middleIndex]
+    // }
+    // const medianValue = median()
+return {average, min, max, length}
 };
 
 export {capitalize, reverseString, calculator, caesarCipher, analyzeArray};
