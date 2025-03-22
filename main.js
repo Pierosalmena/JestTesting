@@ -26,7 +26,8 @@ const calculator = {
     }
 
 };
-function caesarCipher (string, num){
+
+function caesarCipher (string, shift){
     let newString = "";
     const alphabet = [
         "a", "b", "c", "d", "e", "f", "g",
@@ -34,10 +35,24 @@ function caesarCipher (string, num){
         "o", "p", "q", "r", "s", "t", "u",
         "v", "w", "x", "y", "z"
       ];
+
+
     for (let i = 0; i < string.length; i++){
-        let letter = alphabet.indexOf(string[i]);
-        let newIndex = letter + num;
-        newString += alphabet[newIndex];
+        let letterIndex = alphabet.indexOf(string[i].toLowerCase());
+        
+        if (letterIndex == -1){
+            newString += string[i];
+        } else {
+
+        const shiftIndex = (shift + letterIndex) % 26
+        const shiftedChar = alphabet[shiftIndex];
+        
+        if (string[i] === string[i].toUpperCase()) {
+            newString += shiftedChar.toUpperCase();
+          } else {
+            newString += shiftedChar;
+          }
+        }
         
     }
     return newString

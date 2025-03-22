@@ -25,5 +25,8 @@ test('calculate division', () => {
 })
 
 test('ceasar cipher', () => {
-    expect(caesarCipher("ab",1)).toBe("bc")
+    expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!')
+})
+test('analyzeArray', () => {
+    expect(analyzeArray()).toBe()
 })
